@@ -1,0 +1,47 @@
+TZ = "Asia/Shanghai"
+
+[service]
+name = "svc-collector-grpc"
+
+[register]
+name = "svc-collector-grpc-gw"
+
+[listen]
+host = ""
+port = "8081"
+
+[redis.write]
+host = "192.168.31.207"
+port = "6379"
+password = "123456"
+db = 0
+
+[redis.read]
+host = "192.168.31.210"
+port = "6379"
+password = "123456"
+db = 0
+
+[log]
+file = "service-collector.log"
+level = -1
+
+[log.redis]
+enabled = true
+host = "192.168.31.207"
+port = "6379"
+password = "123456"
+db = 0
+key = "service-collector_log"
+
+[[etcd]]
+host = "192.168.31.112"
+port = "2379"
+
+[[etcd]]
+host = "192.168.31.112"
+port = "12379"
+
+[[etcd]]
+host = "192.168.31.112"
+port = "22379"
